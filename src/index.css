@@ -1,13 +1,239 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    background-repeat:repeat;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+.footer-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    background-color: black;
+    z-index: 1000;
+}
+.Footer .footer-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Footer .footer-item {
+    padding: 14px 16px;
+}
+  
+.Footer .footer-link {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    transition: color 0.5s;
+}
+
+.Footer .footer-link:hover {
+    color: #4F2683; 
+}
+
+.Navbar ul {
+    list-style-type: none; 
+    display: flex;
+    justify-content: flex-end; 
+    padding: 0; 
+  }
+
+.Navbar {
+    display: flex;
+    align-items: center; 
+}
+
+.Navbar a:hover {
+    color: #4F2683;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 576px) {
+    .Navbar {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .Navbar a {
+        margin: 10px;
+        padding: 10px 15px;
+        text-decoration: none;
+    }
+}
+
+@media only screen and (min-width: 577px) {
+    .Navbar {
+        justify-content: flex-end;
+    }
+
+    .Navbar a {
+        float: right;
+        color: #8d74ad;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        transition: color 0.5s, margin-top ease 0.5s;
+    }
+}
+
+.Navbar a:hover {
+    color: #4F2683;
+    margin-top: -5px;
+    cursor: pointer;
+}
+
+.home-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+    font-family: morganite;
+}
+
+.heading-container{
+    font-size: 30px;
+    text-align: center;
+    color: #9a82ba;
+    
+}
+
+.heading-container:hover{
+    cursor: pointer;
+}
+
+.heading-container span span{
+    transition: color ease 0.5s;
+}
+
+.heading-container span span:hover{
+    color: #4F2683;
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.catchphrase span {
+    position: relative;
+    opacity: 0;
+    animation: drop-in 0.75s forwards;
+}
+
+@keyframes drop-in {
+    0% { bottom: -0.2em; opacity: 0; }
+    100% { bottom: 0; opacity: 1; }
+}
+
+
+@media only screen and (max-width: 576px) {
+    .logo{
+        width: 70%;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .logo{
+        width: 35%;
+        height: auto;
+    }
+}
+
+.executive-header{
+    font-size: 50px;
+}
+
+.scroll-path{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255,255,255,0.05);
+}
+
+.scroll-watcher{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate
+{
+    0%, 100%
+    {
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+
+.scroll-watcher {
+    width: 5px; 
+    position: fixed;
+    top: 30%; /* Start 30% from the top */
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 1000;
+    background-color: black;
+    transform-origin: left top; 
+    animation: scroll-watcher linear infinite; 
+}
+
+@keyframes scroll-watcher {
+    0% { height: 0; } 
+    100% { height: 100%; } 
+}
+
+
+.scroll-tester {
+    height: 4000px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 5%;
+    z-index: 999;
+    position: relative; 
+    padding-top: 3000px;
+}
+
+.text-at-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.executive-header{
+    margin-right: 15px;
 }

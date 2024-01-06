@@ -12,9 +12,8 @@ const coolBackground = {
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   height: '100vh',
-  width: '100%',
-  margin: 0,
-}
+  width: '100%', 
+};
 
 const FullHome = () => {
   return <div style={coolBackground}>
